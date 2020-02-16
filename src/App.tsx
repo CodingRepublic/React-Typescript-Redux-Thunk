@@ -24,7 +24,7 @@ class App extends React.Component<ReturnType<typeof mapStateToProps> & ReturnTyp
   render() {
     return (
       <div className="App">
-        <button onClick={this.props.toggle}></button>
+        <button onClick={this.props.toggle}>Toggle Button</button>
         {this.props.commonState.display ? <div>true</div> : <div>false</div>}
       </div>
     );
