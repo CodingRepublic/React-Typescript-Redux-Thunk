@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import "./App.css";
 
 import { Dispatch, AnyAction, bindActionCreators } from "redux";
@@ -20,15 +20,13 @@ const mapStateToProps = (state: IAppState): IAppState => {
   };
 };
 
-class App extends React.Component<ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>> {
-  render() {
-    return (
-      <div className="App">
-        <button onClick={this.props.toggle}>Toggle Button</button>
-        {this.props.commonState.display ? <div>true</div> : <div>false</div>}
-      </div>
-    );
-  }
+const App: FC<ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>> = ({ toggle, commonState }) => {
+  return (
+    <div className="App">
+      <button onClick={toggle}>Toggle Button</button>
+      {commonState.display ? <div>true</div> : <div>false</div>}
+    </div>
+  );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

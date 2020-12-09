@@ -1,4 +1,6 @@
-import commonConstants from "../constants/common.constants";
+const commonConstants = {
+  HELLO_TOGGLE: "HELLO_TOGGLE"
+};
 
 type commonState = {
   display: boolean;
@@ -23,4 +25,4 @@ const commonState = (
   }
 };
 
-export { commonState };
+export { commonState, commonConstants };
